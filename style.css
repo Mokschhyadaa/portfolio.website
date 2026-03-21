@@ -1,0 +1,97 @@
+/* ===== Reset & Basic Styles ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Arial', sans-serif;
+    line-height:1.2;
+    color:#333;
+    background:#ffe4e1; /* light pink */
+    scroll-padding-top:70px;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    position:fixed;
+    width:100%; /* Changed to 100% for better coverage */
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.6rem 5%;
+    z-index:1000;
+    border-bottom:1px solid #ddd;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+.nav-title{font-weight:bold;font-size:1.4rem;cursor:pointer;color:#ff6b6b;}
+.nav-items{display:flex;align-items:center;}
+.nav-items a{margin-left:1.5rem; color:#333; font-size:.9rem; text-decoration:none; transition:.3s;}
+.nav-items a:hover{color:#ff6b6b;}
+
+/* ===== SECTIONS ===== */
+section{padding:60px 5%;}
+#about{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:40px;background:#fff;padding-top:120px;}
+.about-description{max-width:450px;}
+.about-description h1{font-size:2rem; color:#111; margin-bottom: 5px;}
+.about-description h3{font-size:1.1rem; color:#ff6b6b; margin-bottom:15px;}
+.about-description p{font-size:1rem; margin-bottom:15px; color:#555;}
+.skills-box{font-weight:bold; color:#ff6b6b; font-size: 0.9rem; border-left: 3px solid #ff6b6b; padding-left: 10px;}
+
+/* PROFILE IMAGE LOGIC */
+.about-image {
+    width:220px;
+    height:220px;
+    background:#eee;
+    border-radius:50%;
+    overflow: hidden; /* This keeps the image round */
+    border: 4px solid #ff6b6b; /* Accent border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents stretching */
+    object-position: center; /* Focuses on the face */
+}
+
+/* ===== EXPERIENCE & OTHERS ===== */
+#experience, #projects, #awards {background:#ffe4e1; text-align: center;}
+h2 {margin-bottom: 30px; font-size: 1.5rem; letter-spacing: 1px;}
+
+.experience-contents, .awards-contents {display:flex; flex-wrap:wrap; gap:20px; justify-content:center; text-align: left;}
+#contents-left {width: 300px;}
+.experience-items div, .awards-items div {
+    cursor:pointer; padding:12px; margin-bottom:10px; 
+    background:#2c3e50; border-radius:8px; font-size:.85rem; color:#f0f0f0;
+    transition:.3s; border-left: 4px solid transparent;
+}
+.experience-items div.active, .awards-items div.active {border-left-color: #ff6b6b; background:#34495e;}
+
+#exp-contents-right > div, #awards-contents-right > div {
+    display:none; padding:20px; border-radius:8px; background:#2c3e50; 
+    color:#f0f0f0; width: 400px; min-height:150px;
+}
+#exp-1-content, #awards-1-content {display:block;}
+
+/* ===== PROJECTS ===== */
+.project-items {display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+.project-items div {
+    flex: 1 1 300px; background:#16a085; padding:20px; border-radius:10px;
+    color: white; border: 1px solid #138d75; transition: .3s;
+}
+.project-items div:hover {transform: translateY(-5px); border-color: #ff6b6b;}
+
+/* ===== FOOTER ===== */
+footer {background:#1a1a1a; color:#fff; padding:40px; text-align:center;}
+footer h3 {margin-bottom:15px; font-size: 1.2rem; color: #ff6b6b;}
+footer a {color:#bbb; text-decoration:none; margin: 0 10px; font-size:.9rem; transition:.3s;}
+footer a:hover {color:#fff;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    #about {text-align: center; flex-direction: column-reverse;}
+    .about-image {width: 180px; height: 180px;}
+    #contents-left, #exp-contents-right > div, #awards-contents-right > div {width: 100%;}
+}
